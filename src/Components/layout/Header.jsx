@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="bg-primary w-full py-3 px-10 text-white mb-4">
+    <header className="bg-primary w-full py-3 px-10 text-white mb-4">
       <div className="max-w-[1200px] flex justify-between m-auto">
         <div>
           <p className="text-xl font-semibold">Blog</p>
@@ -26,6 +26,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
