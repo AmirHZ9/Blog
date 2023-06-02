@@ -1,13 +1,12 @@
-import { useState } from 'react'
+import React from 'react'
+import Header from './Components/layout/Header'
+import HomPage from './Components/Home/HomPage'
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-       </>
+    <div>
+      <Header/>
+      <HomPage/>
+    </div>
   )
 }
-
-export default App
