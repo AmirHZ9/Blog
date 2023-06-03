@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function AuthorEl({ author }) {
-  console.log(author);
+
   return (
     <div className="border-b mb-4 pb-3">
       <a href="" className="flex items-center font-bold">

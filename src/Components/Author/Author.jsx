@@ -11,7 +11,7 @@ export default function Author() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        data.authors.map((author) => <AuthorEl author={author} />)
+        data.authors.map((author) => <AuthorEl key={author.id} author={author} />)
       )}
     </div>
   );

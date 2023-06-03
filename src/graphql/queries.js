@@ -19,14 +19,43 @@ const Get_Blogs_Info = gql`
 `;
 
 const get_author = gql`
-query MyQuery {
-  authors {
-    avatar {
-      url
+  query MyQuery {
+    authors {
+      avatar {
+        url
+      }
+      name
+      slug
+      id
     }
-    name
-    slug
   }
-}`
+`;
 
-export {Get_Blogs_Info,get_author}
+const get_post_info = gql`
+  query getPost($slug: String!) {
+    post(where: { slug: $slug }) {
+      author {
+        avatar {
+          url
+        }
+        field
+        name
+      }
+      comments {
+        name
+        id
+        text
+      }
+      content {
+        html
+      }
+      date
+      title
+      coverPhoto {
+        url
+      }
+    }
+  }
+`;
+
+export { Get_Blogs_Info, get_author, get_post_info };
