@@ -4,6 +4,7 @@ import HomPage from "./Components/Home/HomPage";
 import Footer from "./Components/layout/Footer";
 import { Route, Routes } from "react-router-dom";
 import BLogPage from "./Components/Blog/BLogPage";
+import AuthorPage from "./Components/Author/AuthorPage";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomPage />} />
         <Route path="/Blogs/:slug" element={<BLogPage />} />
-        <Route path="/" element={<HomPage />} />
+        <Route path="/Authors/:slug" element={<AuthorPage />} />
       </Routes>
       <Footer />
     </div>
