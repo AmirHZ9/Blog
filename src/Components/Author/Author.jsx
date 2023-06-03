@@ -5,9 +5,9 @@ import AuthorEl from "../shared/AuthorEl";
 
 export default function Author() {
   const { loading, data, error } = useQuery(get_author);
-  console.log({ loading, data, error });
+ 
   return (
-    <div>
+    <div className="shadow p-3 rounded-xl">
       {loading ? (
         <p>Loading...</p>
       ) : (
