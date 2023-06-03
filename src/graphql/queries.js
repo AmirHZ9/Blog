@@ -48,6 +48,7 @@ query getAuthor($slug:String!){
           url
         }
         title
+        slug
       }
     }
   }

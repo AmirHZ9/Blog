@@ -2,9 +2,9 @@ import React from "react";
 
 export default function CardEl({ post }) {
   return (
-    <div className="	">
-      <div className="flex justify-between items-center px-2 py-3 font-semibold text-sm">
-        <img src={post.author.avatar.url} alt="" className="w-10 h-10" />
+    <div>
+      <div className="flex  items-center px-2 py-3 font-semibold text-sm">
+        <img src={post.author.avatar.url} alt="" className="w-10 h-10 mr-8" />
         <span>{post.author.name}</span>
       </div>
       <img

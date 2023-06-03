@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { get_post_info } from "../../graphql/queries";
+import Spinner from "../shared/Spinner";
 
 export default function BLogPage() {
   const params = useParams();
@@ -11,9 +12,11 @@ export default function BLogPage() {
       slug,
     },
   });
-  console.log({ data, loading, errors })
-  return 
-  <div>
-
-  </div>;
+  console.log({ data, loading, errors });
+    if(loading) return    <Spinner />
+  return (
+    <div>
+        
+    </div>
+  );
 }

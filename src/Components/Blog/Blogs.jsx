@@ -11,7 +11,7 @@ export default function Blogs() {
         <p>loading . . .</p>
       ) : (
         data.posts.map((post) => (
-          <div key={post.id} className="col-span-12 sm:col-span-6 lg:col-span-4 rounded-md overflow-hidden">
+          <div key={post.id} className="col-span-12 sm:col-span-6 lg:col-span-4 rounded-md overflow-hidden shadow-xl">
             <CardEl  post={post} />
           </div>
         ))
