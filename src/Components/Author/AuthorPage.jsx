@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { get_author_info } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import Spinner from "../shared/Spinner";
