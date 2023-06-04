@@ -8,14 +8,14 @@ import CommentEL from "../Comment/CommentEL";
 export default function BLogPage() {
   const params = useParams();
   const slug = params.slug;
-  const { data, loading, errors } = useQuery(get_post_info, {
+  const { data, loading } = useQuery(get_post_info, {
     variables: {
       slug,
     },
   });
-console.log(data)
+
   if (loading) return <Spinner />;
-  const { author, content, coverPhoto, date, title } = data.post;
+  const { author, content, coverPhoto, title } = data.post;
   return (
     <div className="w-full px-10">
       <div className="max-w-[1200px] m-auto">
@@ -43,7 +43,7 @@ console.log(data)
             className="w-full rounded-2xl"
           />
         </div>
-        <div className="flex items-center">
+        <Link to={`/Authors/${author.slug}`} className="flex items-center">
           <img
             src={author.avatar.url}
             alt={author.name}
@@ -55,7 +55,7 @@ console.log(data)
               {author.field}
             </p>
           </div>
-        </div>
+        </Link>
         <div
           dangerouslySetInnerHTML={{ __html: content.html }}
           className="my-10"

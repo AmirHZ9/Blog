@@ -63,6 +63,7 @@ const get_post_info = gql`
         }
         field
         name
+        slug
       }
       comments {
         name
