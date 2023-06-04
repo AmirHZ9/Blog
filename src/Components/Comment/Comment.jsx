@@ -2,11 +2,12 @@ import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { Send_Comment } from "../../graphql/mutation";
 
-export default function Comment() {
+export default function Comment({slug}) {
   const [comment, setComment] = useState({
     name: "",
     email: "",
     text: "",
+    
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -20,11 +21,13 @@ export default function Comment() {
       name: comment.name,
       email: comment.email,
       text: comment.text,
+      slug
     },
   });
 
 //? commentHandler   
   const sendCommentHandler = () => {
+    console.log(slug)
     if (comment.name && comment.email && comment.text) {
       sendComment();
       setComment({
@@ -41,7 +44,7 @@ export default function Comment() {
   };
 
   return (
-    <div className="w-full px-10">
+    <div className="w-full">
       <div className="max-w-[1200px] m-auto shadow-xl  rounded-lg p-4">
         <div>
           <p className="text-primary font-semibold">Send Comment</p>

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { get_post_info } from "../../graphql/queries";
 import Spinner from "../shared/Spinner";
 import Comment from "../Comment/Comment";
+import CommentEL from "../Comment/CommentEL";
 export default function BLogPage() {
   const params = useParams();
   const slug = params.slug;
@@ -12,7 +13,7 @@ export default function BLogPage() {
       slug,
     },
   });
-  console.log({ data });
+console.log(data)
   if (loading) return <Spinner />;
   const { author, content, coverPhoto, date, title } = data.post;
   return (
@@ -60,8 +61,17 @@ export default function BLogPage() {
           className="my-10"
         ></div>
       </div>
-      
-      <Comment/>
+      <Comment slug={slug}/>
+      <div className=" max-w-[1200px] m-auto mt-20 p-4 shadow-xl rounded-lg">
+
+      <div className="mb-6">
+        <p className="text-primary font-semibold">Comments</p>
+      </div>
+      {  data.post.comments.length ?
+        data.post.comments.map(comment => <CommentEL key={comment.id} comments={comment}/>) :
+        <p >There is no comments.</p>
+      }
+      </div>
     </div>
   );
 }
