@@ -27,7 +27,6 @@ export default function Comment({slug}) {
 
 //? commentHandler   
   const sendCommentHandler = () => {
-    console.log(slug)
     if (comment.name && comment.email && comment.text) {
       sendComment();
       setComment({
